@@ -87,14 +87,8 @@ function rerender() {
   screen.innerText = buffer;
 }
 
-function init() {
-  // Check for button, using for loop with var to only accept button presses.
-
-  for (var i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener("click", function () {
-      buttonClick(event.target.innerText);
-    });
-  }
-}
-
-init();
+allButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    buttonClick(event.target.innerText);
+  });
+});
